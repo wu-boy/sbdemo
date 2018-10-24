@@ -1,2 +1,2 @@
 # sbdemo
-Spring Boot2 demo
+Demo project for Spring Boot
