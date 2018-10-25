@@ -1,7 +1,6 @@
-package com.wu.sbdemo.mybatis.test;
+package com.wu.sbdemo.jpamybatis.test;
 
-import com.wu.sbdemo.mybatis.dao.UserMapper;
-import com.wu.sbdemo.mybatis.po.User;
+import com.wu.sbdemo.jpamybatis.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserMapperTest {
+public class UserServiceTest {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     @Test
     public void contextLoads() {
@@ -27,7 +26,6 @@ public class UserMapperTest {
     @Test
     public void test() throws Exception {
 
-        User user = userMapper.getOne(1);
-        System.out.println(user.getUsername());
+        userService.testTransaction();
     }
 }
