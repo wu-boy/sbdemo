@@ -39,9 +39,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+        <postgresql.version>42.2.5</postgresql.version>
 	</properties>
 
-    <!-- 可继承的依赖 -->
+    <!-- 继承的依赖 -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -60,7 +61,13 @@
     <!-- dependencyManagement既能让子模块继承到父模块的依赖配置，又能保证子模块依赖使用的灵活性 -->
     <!-- dependencyManagement下的依赖声明不会引入实际的依赖，不过它能约束dependencies下的依赖使用 -->
     <dependencyManagement>
-
+		<dependencies>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
+		</dependencies>
     </dependencyManagement>
 
 	<build>
