@@ -1,10 +1,12 @@
 package com.wu.sbdemo.jpamybatis.po;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 /**
  * @author: wusq
- * @date: 2018/10/25
+ * @date: 2018/11/15
  */
 
 @Entity
@@ -12,20 +14,21 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    @GeneratedValue(generator = "uuid")
+    private String id;
 
-    @Column(nullable = false, unique = true)
+    @Column(length = 32, unique = true, nullable = false)
     private String username;
 
-    @Column(nullable = false)
+    @Column(length = 32, nullable = false)
     private String password;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -23,16 +23,16 @@ public class UserService {
     private UserMapper userMapper;
 
     public void testTransaction(){
-        User user1 = new User();
-        user1.setUsername("user1");
-        user1.setPassword("111");
-        userRepository.save(user1);
+        User admin = new User();
+        admin.setUsername("admin");
+        admin.setPassword("admin");
+        userRepository.save(admin);
 
-        User user2 = new User();
-        user2.setId(22);
-        user2.setUsername("user2");
-        user2.setPassword("222");
-        userMapper.save(user2);
+        User test = new User();
+        test.setId("1");
+        test.setUsername("test");
+        test.setPassword("test");
+        userMapper.save(test);
 
         // 抛出异常则回滚事务
         //throw new RuntimeException();

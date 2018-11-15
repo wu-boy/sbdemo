@@ -25,8 +25,7 @@ public class UserMapperTest {
     }
 
     @Test
-    public void test() throws Exception {
-
+    public void testGetOne() throws Exception {
         User user = userMapper.getOne(1);
         System.out.println(user.getUsername());
     }

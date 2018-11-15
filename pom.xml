@@ -26,6 +26,7 @@
     <modules>
         <module>sbdemo-jpa</module>
         <module>sbdemo-mybatis</module>
+		<module>sbdemo-jpa-mybatis</module>
     </modules>
 
     <!-- 从spring-boot-starter-parent继承版本号 -->
@@ -78,13 +79,7 @@
     </dependencyManagement>
 
 	<build>
-		<plugins>
-            <!-- 运用spring boot插件 -->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+		<finalName>sbdemo</finalName>
 	</build>
 
 </project>

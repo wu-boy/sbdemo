@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 /**
  * @author: wusq
- * @date: 2018/10/25
+ * @date: 2018/11/15
  */
 
 @Entity
@@ -15,10 +15,10 @@ public class User {
     @GeneratedValue
     private Integer id;
 
-    @Column(nullable = false, unique = true)
+    @Column(length = 32, unique = true, nullable = false)
     private String username;
 
-    @Column(nullable = false)
+    @Column(length = 32, nullable = false)
     private String password;
 
     public Integer getId() {

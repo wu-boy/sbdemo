@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://118.190.154.13:6180/test
+    url: jdbc:postgresql://localhost:5432/test
     username: postgres
-    password: wtlh@QWE123
+    password: postgres
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml

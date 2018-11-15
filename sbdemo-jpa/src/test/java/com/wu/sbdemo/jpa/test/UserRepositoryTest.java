@@ -8,11 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
-
 /**
  * @author: wusq
- * @date: 2018/10/25
+ * @date: 2018/11/15
  */
 
 @RunWith(SpringRunner.class)
@@ -27,14 +25,10 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void test() throws Exception {
-
-        /*User user = new User();
-        user.setUsername("wusq");
-        user.setPassword("123456");
-        userRepository.save(user);*/
-
-        List<User> list = userRepository.findByUsernameLike("wu%");
-        System.out.println(list.get(0).getPassword());
+    public void testSaveOrUpdate() throws Exception {
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("admin");
+        userRepository.save(user);
     }
 }

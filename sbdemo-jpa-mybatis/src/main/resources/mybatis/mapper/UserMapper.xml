@@ -6,10 +6,6 @@
         id,username,password
     </sql>
 
-    <sql id="columnWithoutId">
-        username,password
-    </sql>
-
     <insert id="save" parameterType="user">
         insert into user_test(<include refid="column"/>)values(#{id},#{username},#{password})
     </insert>

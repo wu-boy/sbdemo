@@ -6,12 +6,8 @@
         id,username,password
     </sql>
 
-    <sql id="columnWithoutId">
-        username,password
-    </sql>
-
     <select id="getOne" parameterType="int" resultType="user">
-        select * from user_test where id=#{id}
+        select <include refid="column"/> from user_test where id=#{id}
     </select>
 
 </mapper>

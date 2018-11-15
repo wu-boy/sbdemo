@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author: wusq
- * @date: 2018/10/25
+ * @date: 2018/11/15
  */
 
 @RunWith(SpringRunner.class)
@@ -24,7 +24,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void test() throws Exception {
+    public void testTransaction() throws Exception {
 
         userService.testTransaction();
     }
