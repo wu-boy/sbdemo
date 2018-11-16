@@ -9,6 +9,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author: wusq
  * @date: 2018/11/15
@@ -35,9 +37,20 @@ public class RedisTest {
         user.setUsername("admin");
         user.setPassword("admin");
 
-        //valueOperations.set("user", user);
+        valueOperations.set("user", user);
         //System.out.println(valueOperations.get("user"));
         User o = (User)valueOperations.get("user");
         System.out.println(o.getUsername());
+    }
+
+    @Test
+    public void testKeyExpire() throws Exception {
+        long time = redisTemplate.getExpire("user");
+        System.out.println(time);
+    }
+
+    @Test
+    public void testExpireKey() throws Exception {
+        redisTemplate.expire("user", 10, TimeUnit.MINUTES);
     }
 }
