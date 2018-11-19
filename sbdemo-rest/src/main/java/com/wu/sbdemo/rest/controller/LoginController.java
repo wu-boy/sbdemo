@@ -10,10 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author: wusq
@@ -27,7 +24,7 @@ public class LoginController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
     @ApiOperation("登录")
-    @PostMapping(value = "back-login", produces = "application/json")
+    @PostMapping(value = "back-login")
     public BaseResponse login(@RequestBody @Validated LoginDto loginDto, BindingResult bindingResult){
 
         BaseResponse result = new BaseResponse();
@@ -53,6 +50,15 @@ public class LoginController {
             result.setMessage(e.getMessage());
             e.printStackTrace();
         }
+        return result;
+    }
+
+    @ApiOperation("登录")
+    @GetMapping(value = "test/{name}")
+    public BaseResponse test(@PathVariable String name){
+        BaseResponse result = new BaseResponse();
+        result.setMessage("message");
+        result.setData("hello," + name);
         return result;
     }
 }
